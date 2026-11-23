@@ -8,14 +8,34 @@
   <body>
     <main>
       <h1 id="title">Hyper Chirp</h1>
+      <form id="chirp-form">
+        <fieldset>
+          <legend>Post a chirp</legend>
+          <p>
+            <label for="author-name">Display name</label>
+            <input id="author-name" name="author_name" required>
+          </p>
+          <p>
+            <label for="content">Message</label>
+            <textarea id="content" name="content" required maxlength="280"></textarea>
+          </p>
+          <p>
+            <label for="tag">Tag, optional</label>
+            <input id="tag" name="tag" placeholder="FED28">
+          </p>
+          <p>
+            <label><input type="checkbox" name="is_anonymous"> Post anonymously</label>
+          </p>
+          <button type="submit">Post chirp</button>
+        </fieldset>
+      </form>
+      <p id="compose-status" role="status"></p>
       <div class="container">
-        <div class="chirps">
-          <span style="opacity: 0;" class="loader">Loading...</span>
-        </div>
-        <button class="load-data">load chirps</button>
+        <p class="loader" role="status"></p>
+        <div class="chirps"></div>
+        <button type="button" class="load-data">Load chirps</button>
       </div>
     </main>
     <script type="module" src="./main.js"></script>
   </body>
-
 </html>
